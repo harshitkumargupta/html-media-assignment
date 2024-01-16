@@ -1,0 +1,9 @@
+1)using the new keyword
+2)To create instance of class
+3)local variable, instance variable,static variable
+4)Instance variables are associated with objects of the class, while local variables are associated with a specific method, constructor, or block.
+Instance variables have default values if not explicitly initialized, while local variables must be explicitly initialized before use.
+Instance variables persist throughout the lifetime of the object, while local variables have a limited scope and exist only within the block or method where they are declared.
+5)instance variable- heap
+Local variable-stack
+6)Method overloading is a feature in Java that allows a class to have multiple methods having the same name but with different parameters
