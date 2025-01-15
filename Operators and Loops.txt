@@ -1,0 +1,149 @@
+1-> What are the Conditional Operators in Java ?
+
+Conditional operators are used to perform decision-making based on conditions. They include:
+
+1. Ternary Operator (? :)
+	A shorthand for the if-else statement.
+	Syntax:
+	condition ? value_if_true : value_if_false;
+	Example:
+	int a = 10, b = 20;
+	int max = (a > b) ? a : b; 
+2. Logical AND (&&)
+Returns true if both conditions are true.
+	Example:
+	if (a > 5 && b < 15) 
+	{
+    		System.out.println("Both conditions are true");
+	}
+3. Logical OR (||)
+Returns true if at least one condition is true.
+	Example:
+
+	if (a > 5 || b < 15) 
+	{
+    		System.out.println("At least one condition is true");
+	}
+4. Logical NOT (!)
+Reverses the boolean value of a condition.
+	Example:
+
+	if (!(a > 5)) 
+	{
+    		System.out.println("a is not greater than 5");
+	}
+
+2->What are the types of operators based on the number of operands ?
+
+Types of Operators Based on the Number of Operands
+	Unary Operators
+		Operate on one operand.
+		Examples: +, -, ++, --, !
+	Binary Operators
+		Operate on two operands.
+		Examples: +, -, *, /, %, &&, ||, ==, !=, =
+	Ternary Operator
+		Operates on three operands.
+		Example: condition ? value_if_true : value_if_false
+
+3-> What is the use of Switch case in Java programming ?
+The switch case in Java is used for multi-way branching to execute specific code blocks based on the value of an expression.
+
+Syntax:
+switch (expression) {
+    case value1:
+        // Code for value1
+        break;
+    case value2:
+        // Code for value2
+        break;
+    default:
+        // Code if no match
+}
+
+4->What are the priority levels of arithmetic operation in Java?
+Priority Levels of Arithmetic Operations in Java
+In Java, the priority of arithmetic operations follows this order:
+
+Parentheses (()): Highest priority, forces specific evaluation order.
+Multiplication, Division, Modulus (*, /, %): Evaluated next, from left to right.
+Addition, Subtraction (+, -): Lowest among arithmetic operators, evaluated from left to right.
+
+5->What are the conditional Statements and use of conditional statements in Java?
+Conditional Statements in Java
+
+Conditional statements control the flow of execution based on conditions.
+
+Types
+1. `if`: Executes if true.
+2. `if-else`: Executes one block if true, another if false.
+3. `switch`: Executes one of many blocks based on a value.
+
+---
+
+Use
+Enables decision-making and flow control in programs.
+
+6->What is the syntax of if else statement?
+Syntax : 
+
+if (condition) {
+    // Code block if condition is true
+} else {
+    // Code block if condition is false
+}
+7-> What are the 3 types of iterative statements in java?
+3 Types of Iterative Statements in Java
+
+1. `for` Loop 
+   - Repeats a block of code a specific number of times.
+   - Syntax:
+     
+     for (initialization; condition; increment/decrement) {
+         // Code to be executed
+     }
+     ```
+
+2. `while` Loop 
+   - Repeats a block of code while a condition is true.
+   - Syntax:
+     
+     while (condition) {
+         // Code to be executed
+     }
+     ```
+
+3. `do-while` Loop  
+   - Similar to `while` loop, but guarantees at least one iteration (the condition is checked after the loop).
+   - Syntax:
+     
+     do {
+         // Code to be executed
+     } while (condition);
+    
+8->Write the difference between for loop and do-while loop?
+
+Difference Between for Loop and do-while Loop
+Condition Check:
+
+for Loop: Condition is checked before each iteration.
+do-while Loop: Condition is checked after each iteration.
+Execution Guarantee:
+
+for Loop: May not execute if the condition is false initially.
+do-while Loop: Executes at least once, regardless of the condition.
+Use Case:
+
+for Loop: Ideal for known, fixed iterations.
+do-while Loop: Ideal for scenarios where the loop must run at least once.
+
+9-> Write a program to print numbers from 1 to 10.
+Syntax: 
+public class PrintNumbers {
+    public static void main(String[] args) {
+        // Using a for loop to print numbers from 1 to 10
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+    }
+}
