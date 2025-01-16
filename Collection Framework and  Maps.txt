@@ -1,0 +1,169 @@
+1-> What is the Collection framework in Java?
+Ans: Collection Framework is a combination of classes and interface, which is used to store and manipulate
+the data in the form of objects. It provides various classes such as ArrayList, Vector, Stack, and HashSet, etc.
+and interfaces such as List, Queue, Set, etc. for this purpose.
+2-> What is the difference between ArrayList and LinkedList?
+Ans:The main differences between ArrayList and LinkedList in Java are:
+
+Data Structure:
+
+ArrayList: Uses a dynamic array to store elements. It can be resized as needed.
+LinkedList: Uses a doubly linked list to store elements, where each element points to the previous and next elements.
+Performance:
+
+ArrayList:
+Access Time: Constant time (O(1)) for accessing elements via indices.
+Insertion/Deletion: Slower for insertion or deletion (O(n)) in the middle of the list since shifting elements is required.
+LinkedList:
+Access Time: Linear time (O(n)) for accessing elements by index due to traversal from the head or tail.
+Insertion/Deletion: Faster (O(1)) when inserting or deleting at the beginning or end of the list, as no shifting of elements is necessary.
+Memory Usage:
+
+ArrayList: Requires less memory because it only stores the actual data in a contiguous block.
+LinkedList: Requires more memory because it stores additional pointers for each element (previous and next).
+Resizing:
+
+ArrayList: Needs to be resized (reallocated) when it exceeds its current capacity, which can be an expensive operation.
+LinkedList: Does not need resizing, as elements are dynamically linked.
+Use Case:
+
+ArrayList: Preferred when you need fast random access to elements.
+LinkedList: Preferred when frequent insertion or deletion of elements is required, especially at the ends of the list.
+3->What is the difference between Iterator and ListIterator?
+Ans:The differences between Iterator and ListIterator in Java are:
+
+Interface Type:
+
+Iterator: A general-purpose interface for iterating over any collection (like List, Set, etc.), but it only allows forward traversal of elements.
+ListIterator: A more specialized interface that extends Iterator and is specifically for iterating over a List. It allows both forward and backward traversal.
+Traversal Direction:
+
+Iterator: Can only traverse the collection in a forward direction.
+ListIterator: Can traverse the collection in both forward and backward directions.
+Methods:
+
+Iterator:
+hasNext(): Checks if there are more elements to iterate over.
+next(): Returns the next element in the iteration.
+remove(): Removes the last element returned by the iterator.
+ListIterator: Inherits methods from Iterator and adds more:
+hasPrevious(): Checks if there is a previous element.
+previous(): Returns the previous element.
+add(E e): Adds an element to the list at the current position of the iterator.
+set(E e): Replaces the last element returned by next() or previous() with the specified element.
+nextIndex(): Returns the index of the next element.
+previousIndex(): Returns the index of the previous element.
+Supported Collections:
+
+Iterator: Can be used on any Collection (e.g., List, Set, etc.).
+ListIterator: Can only be used on List types (e.g., ArrayList, LinkedList).
+Modification:
+
+Iterator: Can only remove elements during iteration using remove().
+ListIterator: Can modify the list during iteration by using add(), set(), and remove() methods.
+Index Access:
+
+Iterator: Does not provide direct access to indices.
+ListIterator: Provides methods to get the current index of the element being accessed (nextIndex() and previousIndex()).
+4->What is the difference between Iterator and Enumeration?
+Ans:The differences between Iterator and Enumeration in Java are:
+
+Interface Type:
+
+Iterator: A more modern interface introduced in Java 1.2 as part of the java.util package. It is part of the Java Collections Framework.
+Enumeration: An older interface from Java 1.0, which is part of the java.util package. It is considered somewhat outdated in favor of Iterator.
+Methods:
+
+Iterator:
+hasNext(): Checks if there are more elements in the collection.
+next(): Returns the next element in the iteration.
+remove(): Removes the last element returned by next().
+Enumeration:
+hasMoreElements(): Checks if there are more elements in the enumeration.
+nextElement(): Returns the next element in the enumeration.
+Element Removal:
+
+Iterator: Allows removal of elements during iteration using the remove() method.
+Enumeration: Does not support element removal. It only allows iteration.
+Use Case:
+
+Iterator: Preferred for iterating over collections in the Java Collections Framework (e.g., List, Set).
+Enumeration: Was used primarily for older legacy classes like Vector and Stack. It is still supported for backward compatibility but not recommended for new code.
+Introduced in Java:
+
+Iterator: Introduced in Java 1.2 as part of the Collections Framework.
+Enumeration: Introduced in Java 1.0.
+Modification of Collection:
+
+Iterator: Allows modification of the underlying collection (removal of elements) during iteration.
+Enumeration: Does not allow any modification of the collection while iterating.
+Compatibility:
+
+Iterator: Works with any collection in the Java Collections Framework (List, Set, etc.).
+Enumeration: Primarily works with legacy collections (Vector, Stack, etc.). However, it is also used in some older classes and APIs.
+In general, Iterator is more powerful and flexible compared to Enumeration, which is considered obsolete and is rarely used in modern Java applications.
+5-> What is the difference between List and Set?
+Ans: The List and Set both extend the collection interface. However, there are some differences between the
+two which are listed belowB
+> The List can contain duplicate elements whereas Set includes unique itemsB
+> The List is an ordered collection which maintains the insertion order whereas Set is an unordered collection
+which does not preserve the insertion orderB
+> The List interface contains a single legacy class which is Vector class whereas the Set interface does not
+have any legacy classB
+> The List interface can allow a number of null values whereas Set interface only allows a single null valueB
+6-> What is the difference between HashSet and TreeSet?
+Ans: Both HashSet and TreeSet are implementations of the Set interface in Java, but they have some
+differences in terms of their properties and usage4
+> Ordering: HashSet is an unordered collection of elements, while TreeSet is a sorted set of elements based on
+their natural order or a custom comparatorB
+> Duplication: HashSet does not allow duplicate elements, while TreeSet does not allow duplicates as wellB
+
+> Implementation: HashSet is implemented using a hash table, while TreeSet is implemented using a self-
+balancing binary search tree (Red-Black tree)B
+
+> Performance: HashSet has constant-time complexity O(1) for adding, removing, and testing the existence of
+
+an element, while TreeSet has a logarithmic-time complexity O(log n) for these operations due to the self-
+balancing propertyB
+
+> Memory usage: HashSet uses less memory than TreeSet because it only stores the elements, while TreeSet
+stores additional information for maintaining the orderB
+> Iteration: HashSet provides no guarantees regarding the order of iteration, while TreeSet guarantees the
+elements are iterated in sorted orderB
+> Usage: HashSet is suitable when ordering is not important, and fast access and membership tests are
+needed. TreeSet is suitable when elements need to be sorted or accessed in a specific orderB
+7-> What is the difference between Array and ArrayList?
+Ans: Both arrays and ArrayLists are used to store collections of elements in Java, but they have some
+differences in terms of their properties and usage4
+> Type: Arrays can store elements of primitive data types as well as objects, while ArrayList can only store
+objectsB
+> Size: The size of an array is fixed once it is created, while the size of an ArrayList can be dynamically
+increased or decreased by adding or removing elementsB
+> Mutability: Arrays are mutable, meaning that you can modify the elements in an array after it has been
+created. ArrayList is also mutable, but the only way to modify it is by adding, removing or modifying
+elementsB
+> Performance: Arrays have better performance than ArrayLists for certain operations, such as accessing
+elements by index, because they are implemented as a continuous block of memory. ArrayLists, on the
+other hand, use dynamic memory allocation and are implemented as a dynamic array, which may result in
+more memory overhead and slower performance for certain operationsB
+> Methods: Arrays have a limited set of methods compared to ArrayLists, which provides more methods for
+manipulating the collection, such as adding, removing, and sorting elementsB
+> Initialization: Arrays can be initialized with values at the time of creation, while ArrayList requires the use of
+methods to add elements to the collectionB
+> Compatibility: Arrays are compatible with traditional for-loops and can be easily passed to other methods,
+while ArrayList requires the use of a special for-each loop and may require more code to be passed to other
+methods.
+
+8-> What is a Map in Java?
+Ans: A Map is a collection in Java that stores data as key-value pairs, where each key is unique8
+9-> What are the commonly used implementations of Map in Java?
+Ans: The commonly used implementations of Map in Java are HashMap, TreeMap, LinkedHashMap, and
+ConcurrentHashMap.
+10-> What is the difference between HashMap and TreeMap?
+Ans: HashMap is an unordered collection that uses hashing to store the key-value pairs, while TreeMap is a
+sorted collection that stores the key-value pairs in a sorted order based on the natural order of the keys or a
+custom Comparator8
+11-> How do you check if a key exists in a Map in Java?
+Ans: we can check if a key exists in a Map in Java using the containsKey() method or the get() method. The
+containsKey() method returns a boolean value indicating whether the Map contains the specified key, while
+the get() method returns the value associated with the specified key, or null if the key is not present in the Map.
