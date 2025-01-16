@@ -1,0 +1,133 @@
+1. What is Inheritance in Java?
+Ans: The technique of creating a new class by using an existing class functionality is called inheritance in Java.
+In other words, inheritance is a process where a child class acquires all the properties and behaviors of the
+parent class.
+
+2. What is superclass and subclass??
+Ans: A class from where a subclass inherits features is called superclass. It is also called base class or parent
+class.
+A class that inherits all the members (fields, method, and nested classes) from another class is called a
+subclass. It is also called a derived class, child class, or extended class.
+
+3. How is Inheritance implemented/achieved in Java?
+Ans: Inheritance can be implemented or achieved by using two keywords:
+extends: extends is a keyword that is used for developing the inheritance between two classes and two
+interfaces.
+implements: implements keyword is used for developing the inheritance between a class and interface.
+
+4. What is polymorphism?
+Ans: Polymorphism in OOP is the ability of an entity to take several forms. In other words, it refers to the ability of
+an object (or a reference to an object) to take different forms of objects. It allows a common data-gathering
+message to be sent to each class. Polymorphism encourages what is called ‘extendibility’ which means an
+object or a class can have its uses extended.
+
+5.Differentiate between method overloading and method overriding.
+Method Overloading and Method Overriding are both concepts of polymorphism in Java, but they differ in several key aspects:
+
+Definition:
+
+Method Overloading: Occurs when multiple methods with the same name exist in the same class but differ in the number or type of parameters. The return type can be the same or different.
+Method Overriding: Occurs when a subclass provides a specific implementation for a method that is already defined in its superclass, with the same method signature (name, parameters, return type).
+Parameters:
+
+Method Overloading: Methods must have different parameter lists (either in number or type).
+Method Overriding: The method in the subclass must have the same parameter list as in the superclass.
+Return Type:
+
+Method Overloading: Return type can be different for each overloaded method.
+Method Overriding: The return type must be the same (or a subtype) as the one in the superclass method.
+Binding:
+
+Method Overloading: This is resolved at compile-time (early binding).
+Method Overriding: This is resolved at runtime (late binding).
+Inheritance:
+
+Method Overloading: It does not require inheritance. Methods can be overloaded within the same class.
+Method Overriding: Requires inheritance. The method in the subclass overrides a method in the superclass.
+Purpose:
+
+Method Overloading: Allows the use of the same method name to perform different tasks based on different parameters.
+Method Overriding: Allows a subclass to provide its own specific implementation of a method already defined in the superclass.
+
+6. What is an abstraction explained with an Example?
+Ans: Abstraction is nothing but the quality of dealing with ideas rather than events. It basically deals with hiding
+the internal details and showing the essential things to the user.
+Abstract class Sports { // abstract class sports
+Abstract void jump(); // abstract method
+}
+
+7. What is the difference between an abstract method and final method in Java?Explain with an example
+Ans: The abstract method is incomplete while the final method is regarded as complete. The only way to use
+an abstract method is by overriding it, but you cannot override a final method in Java.
+8. What is the final class in Java?
+Ans: A class declared with the final keyword is known as the final class. A final class can’t be inherited by
+subclasses. By using the final class, we can restrict the inheritance of the class. We can create a class as a final
+class only if it is complete in nature, which means it must not be an abstract class. In java, all the wrapper
+classes are final classes like String, Integer, etc.
+If we try to inherit a final class, then the compiler throws an error at compilation time. We can’t create a class as
+immutable without the final class.
+final class ParentClass
+{
+void showData()
+{
+System.out.println("This is a method of final Parent class");
+}
+}
+//It will throw compilation error
+class ChildClass extends ParentClass
+{
+void showData()
+{
+System.out.println("This is a method of Child class");
+}
+}
+class MainClass
+{
+public static void main(String arg[])
+{
+ParentClass obj = new ChildClass();
+obj.showData();
+}
+}
+
+9. Differentiate between abstraction and encapsulation.
+
+Abstraction and Encapsulation are two fundamental concepts in object-oriented programming, but they serve different purposes:
+
+Definition:
+
+Abstraction: Abstraction is the process of hiding the implementation details and showing only the essential features of an object. It allows us to focus on what an object does rather than how it does it.
+Encapsulation: Encapsulation is the technique of bundling the data (variables) and the methods (functions) that operate on the data into a single unit (class). It also hides the internal state of an object and only allows access through specific methods (getters and setters).
+Purpose:
+
+Abstraction: The goal is to define a clear interface, hiding complex implementation. It simplifies the interaction with an object by only exposing what is necessary.
+Encapsulation: The goal is to protect an object’s state from unintended interference and misuse by restricting direct access to its fields. It promotes the integrity of data.
+Visibility:
+
+Abstraction: It hides the complexity and implementation details. For example, we may not know how a sorting algorithm works but can still use the sort method to sort elements.
+Encapsulation: It hides the internal state (data) of an object and restricts direct access to it. The data can only be accessed or modified through methods (like getters and setters).
+Implementation:
+
+Abstraction: Achieved through abstract classes or interfaces, where the class/interface provides method declarations but not the actual implementation.
+Encapsulation: Achieved by declaring class variables as private and providing public getter and setter methods to access and modify them.
+Focus:
+
+Abstraction: Focuses on what an object does, and it emphasizes the behavior of the object.
+Encapsulation: Focuses on how an object’s data is accessed and modified, ensuring data hiding and integrity.
+
+10. Difference between Runtime and compile time polymorphism explain with an example
+
+Compile-time Polymorphism and Runtime Polymorphism are both types of polymorphism in Java, but they differ in when the method resolution occurs.
+
+1. Compile-time Polymorphism (Static Polymorphism):
+Definition: Compile-time polymorphism happens when the method to be called is resolved during compilation. It is typically achieved through method overloading.
+Resolution: The compiler decides which method to call based on the method signature, which includes the method name, parameter types, and number of parameters.
+Example: Method overloading, where multiple methods with the same name exist but with different parameters.
+2. Runtime Polymorphism (Dynamic Polymorphism):
+Definition: Runtime polymorphism occurs when the method to be invoked is determined at runtime. This is achieved through method overriding.
+Resolution: The method call is resolved dynamically based on the object type at runtime, not the reference type.
+Example: Method overriding, where a subclass provides a specific implementation of a method defined in a superclass.
+Key Differences:
+Method Resolution: Compile-time polymorphism is resolved by the compiler (early binding), while runtime polymorphism is resolved at runtime (late binding).
+Implementation: Compile-time polymorphism involves method overloading, while runtime polymorphism involves method overriding.
+Performance: Compile-time polymorphism tends to be faster as method resolution is done at compile time. Runtime polymorphism can be slower due to dynamic method dispatch at runtime.
