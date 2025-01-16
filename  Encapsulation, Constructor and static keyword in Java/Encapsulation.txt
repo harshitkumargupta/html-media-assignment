@@ -1,0 +1,186 @@
+1-> What is Encapsulation in Java? Why is it called Data hiding?
+
+Encapsulation in Java is the process of wrapping data (variables) and methods that operate on the data into a single unit (class). It is called data hiding because the internal state of an object is hidden from outside access. Direct access to data is restricted by declaring variables as private, and access is provided via public methods (getters and setters). This ensures controlled access and modification of the data.
+
+2->What are the important features of Encapsulation?
+
+The important features of Encapsulation in Java are:
+
+Data Hiding: Encapsulation hides the internal state of an object by making the variables private and providing public methods (getters and setters) for controlled access to the data.
+
+Control Access: Encapsulation allows controlled access to the object's state. You can define custom logic in setter methods to validate or modify the input before assigning values to the private variables.
+
+Modularity: Encapsulation enables the bundling of related properties and behaviors into a single class, making the code more modular and organized.
+
+Increased Flexibility and Maintainability: The internal implementation of a class can be modified without affecting the external code that uses the class, as long as the interface (getters and setters) remains unchanged.
+
+Security: By restricting direct access to the data, encapsulation ensures that the object’s state cannot be altered inappropriately, improving security.
+
+Reusability: Encapsulation allows for reusable components since the internal details are abstracted, and users can interact with objects through well-defined interfaces (methods).
+
+3->What are getter and setter methods in Java Explain with an example?
+
+Getter and Setter Methods in Java are used to access and modify the private variables of a class. They provide controlled access to the variables and are essential features of encapsulation.
+
+Getter Method: It retrieves or "gets" the value of a private variable.
+Setter Method: It sets or updates the value of a private variable.
+Purpose:
+Getter: Allows reading the value of a private variable.
+Setter: Allows setting a new value to a private variable.
+
+Example:
+class Person {
+    private String name;  // Private variable
+    private int age;      // Private variable
+
+    // Getter method for 'name'
+    public String getName() {
+        return name;
+    }
+
+    // Setter method for 'name'
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter method for 'age'
+    public int getAge() {
+        return age;
+    }
+
+    // Setter method for 'age'
+    public void setAge(int age) {
+        if(age > 0) {  // Example of validation in setter
+            this.age = age;
+        }
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person();
+        
+        // Setting values using setter methods
+        person.setName("Alice");
+        person.setAge(25);
+        
+        // Getting values using getter methods
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+    }
+}
+
+4->What is the use of this keyword explain with an example?
+
+The this keyword in Java refers to the current instance of the class. It is commonly used to distinguish between instance variables (fields) and local variables when they have the same name. It can also be used to invoke current instance methods, pass the current object as a parameter, or call another constructor within the same class.
+
+Uses of this Keyword:
+Distinguish Instance Variables from Local Variables: If a method or constructor has parameters with the same name as instance variables, this is used to differentiate between them.
+Calling Instance Methods: You can use this to call instance methods of the current object.
+Passing the Current Object: this can be used to pass the current object as a parameter to another method or constructor.
+Calling Another Constructor: Within the same class, this() can be used to call another constructor of the same class.
+
+Example:
+class Person {
+    private String name;  // Instance variable
+    private int age;      // Instance variable
+
+    // Constructor with parameters
+    public Person(String name, int age) {
+        // Using 'this' to distinguish between instance variables and constructor parameters
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display details
+    public void displayDetails() {
+        System.out.println("Name: " + this.name); // Using 'this' to refer to instance variable
+        System.out.println("Age: " + this.age);
+    }
+
+    // Calling another constructor using 'this'
+    public Person() {
+        this("Unknown", 0);  // Calls the constructor with parameters
+    }
+
+    public static void main(String[] args) {
+        Person person1 = new Person("Alice", 30);  // Calls parameterized constructor
+        person1.displayDetails();
+
+        Person person2 = new Person();  // Calls default constructor
+        person2.displayDetails();
+    }
+}
+
+5->What is the advantage of Encapsulation?
+
+The advantages of Encapsulation in Java are as follows:
+
+Data Hiding: Encapsulation hides the internal state of an object, ensuring that data is not directly accessed or modified by external classes. This prevents unintended or unauthorized access to the object's internal data.
+
+Control Over Data: By providing getter and setter methods, you can control how the data is accessed or modified. For example, you can add validation checks in the setter methods to ensure that only valid data is set.
+
+Improved Security: Encapsulation improves the security of the program by allowing access to the object's data only through controlled methods. This ensures that sensitive data cannot be altered directly by other objects or external code.
+
+Flexibility and Maintainability: Since the internal workings of a class are hidden, you can change the implementation without affecting other parts of the code that use the class. This increases flexibility and makes the code easier to maintain.
+
+Increased Modularity: Encapsulation makes it easier to divide the code into modular classes. Each class encapsulates its own data and behavior, making it easier to design, develop, and maintain large applications.
+
+Improved Code Readability and Debugging: By clearly defining the interface (via public getter and setter methods) and hiding the internal details, encapsulation makes the code easier to read, understand, and debug.
+
+Code Reusability: Encapsulation allows for the creation of reusable components. The class can be used in different contexts without revealing its internal structure, leading to better code reuse.
+
+6->How to achieve encapsulation in Java? Give an example.
+
+Encapsulation in Java is achieved by following these steps:
+
+Declare the variables as private: Make the class variables private so they cannot be accessed directly from outside the class.
+Provide public setter and getter methods: Use public methods to access and modify the values of the private variables. These methods are called getters (for reading values) and setters (for modifying values).
+Add validation logic (optional): You can add validation or other logic within the setter methods to ensure the integrity of the data.
+
+Example:
+class Employee {
+    // Step 1: Declare private variables (data hiding)
+    private String name;
+    private double salary;
+
+    // Step 2: Public setter method for 'name'
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Public getter method for 'name'
+    public String getName() {
+        return name;
+    }
+
+    // Public setter method for 'salary'
+    public void setSalary(double salary) {
+        if (salary > 0) {  // Validation to ensure salary is positive
+            this.salary = salary;
+        } else {
+            System.out.println("Salary must be positive.");
+        }
+    }
+
+    // Public getter method for 'salary'
+    public double getSalary() {
+        return salary;
+    }
+
+    // Method to display employee details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+    }
+
+    public static void main(String[] args) {
+        // Step 3: Creating an object of Employee class
+        Employee employee = new Employee();
+
+        // Using setter methods to set the values
+        employee.setName("John");
+        employee.setSalary(50000);
+
+        // Using getter methods to get the values and print them
+        employee.displayDetails();
+    }
+}

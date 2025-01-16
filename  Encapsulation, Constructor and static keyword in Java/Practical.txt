@@ -1,0 +1,153 @@
+1.Create a class that keeps track of the number of instances created. Implement a static variable and method to accomplish this.
+
+class InstanceCounter {
+    static int count = 0;  // Static variable to track the number of instances
+
+    // Constructor increments the instance count each time an object is created
+    InstanceCounter() {
+        count++;
+    }
+
+    // Static method to get the current instance count
+    static void displayCount() {
+        System.out.println("Number of instances created: " + count);
+    }
+
+    public static void main(String[] args) {
+        // Creating instances of the class
+        InstanceCounter obj1 = new InstanceCounter();
+        InstanceCounter obj2 = new InstanceCounter();
+        InstanceCounter obj3 = new InstanceCounter();
+
+        // Displaying the count of instances created
+        InstanceCounter.displayCount();  // Output: 3
+    }
+}
+
+
+2.Write a program and create a constructor with parameters and initialize the variable using a constructor.
+
+class Person {
+    String name;
+    int age;
+
+    // Constructor with parameters to initialize the variables
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display the values of name and age
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating an object with parameters passed to the constructor
+        Person person1 = new Person("Alice", 25);
+        Person person2 = new Person("Bob", 30);
+
+        // Displaying the details
+        person1.displayDetails();
+        person2.displayDetails();
+    }
+}
+
+
+3.Use a private keyword for a variable and use setter and getter methods to initialise and print the values.
+
+class Student {
+    // Private variables
+    private String name;
+    private int age;
+
+    // Setter method for 'name'
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter method for 'name'
+    public String getName() {
+        return name;
+    }
+
+    // Setter method for 'age'
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Getter method for 'age'
+    public int getAge() {
+        return age;
+    }
+
+    public static void main(String[] args) {
+        // Creating an object of Student
+        Student student = new Student();
+
+        // Using setter methods to initialize values
+        student.setName("John");
+        student.setAge(20);
+
+        // Using getter methods to print values
+        System.out.println("Name: " + student.getName());
+        System.out.println("Age: " + student.getAge());
+    }
+}
+
+
+4.Write a program to call an method without creating an object of a class
+
+class MyClass {
+    // Static method
+    static void greet() {
+        System.out.println("Hello, welcome to Java!");
+    }
+
+    public static void main(String[] args) {
+        // Calling the static method directly using the class name
+        MyClass.greet();
+    }
+}
+
+5.Write a program which has static block and constructor overloading,initialise variables using constructors and print it.
+
+class Student {
+    // Instance variables
+    private String name;
+    private int age;
+
+    // Static block
+    static {
+        System.out.println("Static block executed. Class is loaded.");
+    }
+
+    // Constructor with one parameter
+    Student(String name) {
+        this.name = name;
+        this.age = 18;  // Default age
+    }
+
+    // Constructor with two parameters (overloaded)
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display the values of name and age
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating objects using different constructors
+        Student student1 = new Student("Alice");
+        Student student2 = new Student("Bob", 22);
+
+        // Displaying the details
+        student1.displayDetails();
+        student2.displayDetails();
+    }
+}
